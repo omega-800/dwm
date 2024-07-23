@@ -6,8 +6,8 @@ static const unsigned int gappx     = 5;        /* gaps between windows */
 static unsigned int snap      = 32;       /* snap pixel */
 static int showbar            = 1;        /* 0 means no standard bar */
 static int topbar             = 1;        /* 0 means standard bar at bottom */
-static const double activeopacity   = 0.9f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
-static const double inactiveopacity = 0.7f;     /* Window opacity when it's inactive (0 <= opacity <= 1) */
+static const double activeopacity   = 1.0f;     /* Window opacity when it's focused (0 <= opacity <= 1) */
+static const double inactiveopacity = 1.0f;     /* Window opacity when it's inactive (0 <= opacity <= 1) */
 static const int extrabar           = 1;        /* 0 means no extra bar */
 static const char statussep         = ';';      /* separator between statuses */
 
@@ -106,7 +106,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 /*
  * Xresources preferences to load at startup
