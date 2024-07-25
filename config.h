@@ -38,7 +38,7 @@ static char *colors[][3] = {
     [SchemeTabActive] = {selbgcolor, selbordercolor, selfgcolor},
 };
 
-static char term[] = "st";
+static char term[] = "kitty";
 
 /* tagging */
 static const char *tags[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
