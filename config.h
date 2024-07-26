@@ -125,7 +125,7 @@ ResourcePref resources[] = {
     {"nmaster", INTEGER, &nmaster},
     {"resizehints", INTEGER, &resizehints},
     {"mfact", FLOAT, &mfact},
-    {"term", FLOAT, &term},
+    {"term", STRING, &term},
 };
 
 /* key definitions */
@@ -154,8 +154,8 @@ static const char *dmenucmd[] = {"dmenu_run", "-m",  dmenumon,       "-fn",
                                  dmenufont,   "-nb", normbgcolor,    "-nf",
                                  normfgcolor, "-sb", selbordercolor, "-sf",
                                  selfgcolor,  NULL};
-static const char *termcmd[] = {term, NULL};
 
+static const char *termcmd[] = {term, NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
