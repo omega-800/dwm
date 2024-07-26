@@ -102,6 +102,31 @@ static const Layout layouts[] = {
     {"[M]", monocle},
     {"[D]", deck},
 };
+/*
+ * Xresources preferences to load at startup
+ */
+ResourcePref resources[] = {
+    {"faceName", STRING, &font},
+    {"faceName", STRING, &dmenufont},
+    {"color10", STRING, &normbgcolor},
+    {"color11", STRING, &normbordercolor},
+    {"color7", STRING, &normfgcolor},
+    {"color11", STRING, &selbgcolor},
+    {"color5", STRING, &selbordercolor},
+    {"foreground", STRING, &selfgcolor},
+    {"color11", STRING, &warnbggcolor},
+    {"color9", STRING, &warnfggcolor},
+    {"color1", STRING, &urgbgcolor},
+    {"color0", STRING, &urgfggcolor},
+    {"borderpx", INTEGER, &borderpx},
+    {"snap", INTEGER, &snap},
+    {"showbar", INTEGER, &showbar},
+    {"topbar", INTEGER, &topbar},
+    {"nmaster", INTEGER, &nmaster},
+    {"resizehints", INTEGER, &resizehints},
+    {"mfact", FLOAT, &mfact},
+    {"term", FLOAT, &term},
+};
 
 /* key definitions */
 #define WINKEY Mod4Mask
@@ -131,31 +156,6 @@ static const char *dmenucmd[] = {"dmenu_run", "-m",  dmenumon,       "-fn",
                                  selfgcolor,  NULL};
 static const char *termcmd[] = {term, NULL};
 
-/*
- * Xresources preferences to load at startup
- */
-ResourcePref resources[] = {
-    {"faceName", STRING, &font},
-    {"faceName", STRING, &dmenufont},
-    {"color10", STRING, &normbgcolor},
-    {"color11", STRING, &normbordercolor},
-    {"color7", STRING, &normfgcolor},
-    {"color11", STRING, &selbgcolor},
-    {"color5", STRING, &selbordercolor},
-    {"foreground", STRING, &selfgcolor},
-    {"color11", STRING, &warnbggcolor},
-    {"color9", STRING, &warnfggcolor},
-    {"color1", STRING, &urgbgcolor},
-    {"color0", STRING, &urgfggcolor},
-    {"borderpx", INTEGER, &borderpx},
-    {"snap", INTEGER, &snap},
-    {"showbar", INTEGER, &showbar},
-    {"topbar", INTEGER, &topbar},
-    {"nmaster", INTEGER, &nmaster},
-    {"resizehints", INTEGER, &resizehints},
-    {"mfact", FLOAT, &mfact},
-    {"term", FLOAT, &term},
-};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
