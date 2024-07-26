@@ -155,7 +155,7 @@ ResourcePref resources[] = {
     {"nmaster", INTEGER, &nmaster},
     {"resizehints", INTEGER, &resizehints},
     {"mfact", FLOAT, &mfact},
-    {"term", STRING, &term},
+    //{"term", STRING, &term},
 };
 
 static const Key keys[] = {
