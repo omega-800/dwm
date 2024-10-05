@@ -952,14 +952,19 @@ drawbar(Monitor *m)
 	/* draw status first so it can be overdrawn by tags later */
 	if (m == selmon || statusall) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
-		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
+		//tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
+    //because the dwm_stats.sh script uses hex values as color indicators and the status_colors
+    //patch is buggy, this offset is required for "normal" displaying of the values 
+    //(10px for each hex value). If the script runs on a machine without separate /home partition,
+    //then the date might not show. so it's (12-2)*10 px
+		tw = TEXTW(stext) - lrpad - 100;
 		while (1) {
 			if ((unsigned int)*ts > LENGTH(colors)) { ts++; continue ; }
 			ctmp = *ts;
 			*ts = '\0';
 			drw_text(drw, m->ww - tw + tx, 0, tw - tx, bh, 0, tp, 0);
 			//tx += TEXTW(tp) -lrpad;
-			tx += TEXTW(tp) -lrpad+14;
+			tx += TEXTW(tp) -lrpad;
 			if (ctmp == '\0') { break; }
 			drw_setscheme(drw, scheme[(unsigned int)(ctmp-1)]);
 			*ts = ctmp;
