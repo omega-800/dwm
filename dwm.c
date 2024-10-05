@@ -959,7 +959,7 @@ drawbar(Monitor *m)
 			*ts = '\0';
 			drw_text(drw, m->ww - tw + tx, 0, tw - tx, bh, 0, tp, 0);
 			//tx += TEXTW(tp) -lrpad;
-			tx += TEXTW(tp) +1;
+			tx += TEXTW(tp) -lrpad+1;
 			if (ctmp == '\0') { break; }
 			drw_setscheme(drw, scheme[(unsigned int)(ctmp-1)]);
 			*ts = ctmp;
